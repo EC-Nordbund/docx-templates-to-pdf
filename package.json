@@ -1,6 +1,6 @@
 {
   "name": "docx-templates-to-pdf",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "dist/index.js",
   "repository": "https://github.com/EC-Nordbund/docx-templates-to-pdf.git",
   "author": "Sebastian Krüger <2pi_r2@gmx.de>",

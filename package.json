@@ -1,0 +1,20 @@
+{
+  "name": "docx-templates-to-pdf",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "repository": "https://github.com/EC-Nordbund/docx-templates-to-pdf.git",
+  "author": "Sebastian Krüger <2pi_r2@gmx.de>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "yarn build",
+    "demo": "node ./demo/index.js"
+  },
+  "devDependencies": {
+    "typescript": "^4.1.2"
+  },
+  "dependencies": {
+    "docx-templates": "^4.5.2",
+    "gotenberg-js-client": "^0.6.2"
+  }
+}

@@ -18,7 +18,7 @@ function convertDocx2Pdf(url: string, file: ArrayBuffer[] | ArrayBuffer) {
   if (!Array.isArray(file)) {
     file = [file]
   }
-  return pipe(gotenberg(url), convert, office, set(timeout(15)), please)(file.map((v, i) => ([`${i}.docx`, Buffer.from(v)])))
+  return pipe(gotenberg(url), convert, office, set(timeout(30)), please)(file.map((v, i) => ([`${i}.docx`, Buffer.from(v)])))
 }
 
 export function createGotenberg(url: string) {

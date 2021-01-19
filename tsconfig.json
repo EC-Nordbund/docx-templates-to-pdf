@@ -4,6 +4,7 @@
     "module": "CommonJS",
     "outDir": "./dist",
     "esModuleInterop": true,
-    "declaration": true
+    "declaration": true,
+    "emitDeclarationOnly": true
   }
 }

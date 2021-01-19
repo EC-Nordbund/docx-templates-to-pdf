@@ -1,32 +1,62 @@
 import { createReport } from "docx-templates";
 import { UserOptions } from "docx-templates/lib/types";
-import { gotenberg, pipe, office, please, convert, set, timeout } from "gotenberg-js-client";
+import {
+  gotenberg,
+  pipe,
+  office,
+  please,
+  convert,
+  set,
+  timeout,
+} from "gotenberg-js-client";
 
-async function fillDoc(file: Buffer, data: any, config: Partial<UserOptions>): Promise<ArrayBuffer> {
-  return (await createReport({
-    ...config,
-    template: file,
-    data,
-  })).buffer
-}
+type modifiedConfig = Omit<UserOptions, "template" | "queryVars">;
 
-function fillDocs(file: Buffer, data: any[], config: Partial<UserOptions>): Promise<ArrayBuffer[]> {
-  return Promise.all(data.map(v => fillDoc(file, v, config)))
-}
+type DATA = Record<string, any>;
+type Template = UserOptions["template"];
 
-function convertDocx2Pdf(url: string, file: ArrayBuffer[] | ArrayBuffer) {
-  if (!Array.isArray(file)) {
-    file = [file]
-  }
-  return pipe(gotenberg(url), convert, office, set(timeout(30)), please)(file.map((v, i) => ([`${i}.docx`, Buffer.from(v)])))
-}
+export class Gotenberg {
+  constructor(protected url: string) {}
 
-export function createGotenberg(url: string) {
-  return async function fillDocToPdf(file: UserOptions['template'], data: any | any[], config: Omit<UserOptions, 'template' | 'data' | 'query' | 'queryVars'> = {}) {
-    if (Array.isArray(data)) {
-      return convertDocx2Pdf(url, await fillDocs(file, data, config))
-    } else {
-      return convertDocx2Pdf(url, await fillDoc(file, data, config))
+  public async fillDocToPdf(
+    file: Template,
+    data: DATA[],
+    config?: modifiedConfig
+  ): Promise<NodeJS.ReadableStream>;
+  public async fillDocToPdf(
+    file: Template,
+    data: [DATA],
+    config: modifiedConfig,
+    onlyDocx: true
+  ): Promise<ArrayBufferLike>;
+  public async fillDocToPdf(
+    file: Template,
+    data: DATA[],
+    config: modifiedConfig = {},
+    onlyDocx = false
+  ) {
+    const query = typeof config.data === "function";
+
+    const docx = await Promise.all(
+      data.map((v) =>
+        createReport({
+          ...config,
+          template: file,
+          ...(query ? { queryVars: v } : { data: v }),
+        }).then((v) => v.buffer)
+      )
+    );
+
+    if (onlyDocx && data.length === 1) {
+      return docx[0] as any;
     }
+
+    return pipe(
+      gotenberg(this.url),
+      convert,
+      office,
+      set(timeout(30)),
+      please
+    )(docx.map((v, i) => [`${i}.docx`, Buffer.from(v)]));
   }
 }

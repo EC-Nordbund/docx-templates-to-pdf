@@ -1,5 +1,8 @@
+.github
 node_modules
 src
-tsconfig.json
 .gitignore
+renovate.json
+rollup.config.js
+tsconfig.json
 *.pdf

@@ -6,22 +6,23 @@ This is a helper Package on top of docx-templates and gotenberg-js-client to fil
 
 ## API
 
+> 
+
 The simple syntax you can see in the .d.ts file:
 
 ```ts
 /// <reference types="node" />
 import { UserOptions } from "docx-templates/lib/types";
-export declare function createGotenberg(
-  url: string
-): (
-  file: UserOptions["template"],
-  data: any | any[],
-  config?: Omit<UserOptions, "template" | "data" | "query" | "queryVars">
-) => Promise<NodeJS.ReadableStream>;
+declare type modifiedConfig = Omit<UserOptions, "template" | "queryVars">;
+declare type DATA = Record<string, any>;
+declare type Template = UserOptions["template"];
+export declare class Gotenberg {
+    protected url: string;
+    constructor(url: string);
+    fillDocToPdf(file: Template, data: DATA[], config?: modifiedConfig): Promise<NodeJS.ReadableStream>;
+    fillDocToPdf(file: Template, data: [DATA], config: modifiedConfig, onlyDocx: true): Promise<ArrayBufferLike>;
+}
 ```
 
-We only export a function called `createGotenberg` wich recives one string - a URL to your gotenberg instance and returns a new function.
+As you can see we export a class `Gotenberg` wich has to be created with a `url`. The class has one method `fillDocToPdf`. This expects a Buffer as a file and a Array of Data objects as data. Additionaly we can provide a config object. This ist nearly the same config as the options of `docx-templates`. If we provide a query-Resolver for data (so a function) the data will be injected as `queryVars` not as `data`. If data is a single Object you can provid `onlyDocx` as `true` and get a `ArrayBufferLike` for the filled `docx` file. In all other cases you get a `NodeJS.ReadableStream` as a Result.
 
-The returned function recives 2 or 3 Arguments. The first is a Buffer of the file. The second argument is the data to inject in the document (or a array for multiple documents). The third arguments is optional and can be added to configure docx-templates. These options are directly injected. Only the options template, data, query and queryVars are not allowed.
-
-The function returns a ReadableStream.

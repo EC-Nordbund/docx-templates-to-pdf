@@ -10,7 +10,7 @@ import {
   timeout,
 } from "gotenberg-js-client";
 
-type modifiedConfig = Omit<UserOptions, "template" | "queryVars">;
+type config = Omit<UserOptions, "template" | "queryVars">;
 
 type DATA = Record<string, any>;
 type Template = UserOptions["template"];
@@ -21,18 +21,18 @@ export class Gotenberg {
   public async fillDocToPdf(
     file: Template,
     data: DATA[],
-    config?: modifiedConfig
+    config?: config
   ): Promise<NodeJS.ReadableStream>;
   public async fillDocToPdf(
     file: Template,
     data: [DATA],
-    config: modifiedConfig,
+    config: config,
     onlyDocx: true
   ): Promise<ArrayBufferLike>;
   public async fillDocToPdf(
     file: Template,
     data: DATA[],
-    config: modifiedConfig = {},
+    config: config = {},
     onlyDocx = false
   ) {
     const query = typeof config.data === "function";

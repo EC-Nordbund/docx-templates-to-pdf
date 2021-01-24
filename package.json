@@ -16,7 +16,7 @@
     "@rollup/plugin-commonjs": "17.0.0",
     "@rollup/plugin-json": "4.1.0",
     "@rollup/plugin-node-resolve": "11.1.0",
-    "@types/node": "14.14.21",
+    "@types/node": "14.14.22",
     "docx-templates": "4.5.3",
     "esbuild": "0.8.33",
     "gotenberg-js-client": "0.6.2",

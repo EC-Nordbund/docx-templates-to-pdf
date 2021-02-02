@@ -1,5 +1,5 @@
 {
-  "name": "docx-templates-to-pdf",
+  "name": "@ec-nordbund/docx-templates-to-pdf",
   "version": "2.0.0",
   "main": "dist/index.js",
   "module": "dist/indes.mjs",

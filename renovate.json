@@ -22,5 +22,11 @@
     "group:recommended",
     "group:monorepos"
   ],
-  "configWarningReuseIssue": false
+  "configWarningReuseIssue": false,
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    }
+  ]
 }

@@ -1,5 +1,9 @@
 {
-  "extends": [
-    "config:base"
-  ]
+  "assignees": [
+    "mathe42"
+  ],
+  "branchConcurrentLimit": 0,
+  "configWarningReuseIssue": false,
+  "dependencyDashboard": true,
+  "dependencyDashboardApproval": true
 }

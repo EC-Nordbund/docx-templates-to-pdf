@@ -1,9 +1,24 @@
 {
-  "assignees": [
-    "mathe42"
+  "extends": [
+    ":pinAllExceptPeerDependencies",
+    ":separateMajorReleases",
+    ":separateMultipleMajorReleases",
+    ":separatePatchReleases",
+    ":renovatePrefix",
+    ":semanticPrefixChore",
+    ":rebaseStalePrs",
+    ":prImmediately",
+    ":disableRateLimiting",
+    ":automergeDigest",
+    ":updateNotScheduled",
+    ":automergeLinters",
+    ":automergeTypes",
+    ":label(deps)",
+    ":assignAndReview(mathe42)",
+    ":enableVulnerabilityAlerts",
+    ":semanticCommits",
+    ":dependencyDashboard",
+    ":dependencyDashboardApproval"
   ],
-  "branchConcurrentLimit": 0,
-  "configWarningReuseIssue": false,
-  "dependencyDashboard": true,
-  "dependencyDashboardApproval": true
+  "configWarningReuseIssue": false
 }

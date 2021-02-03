@@ -18,7 +18,9 @@
     ":enableVulnerabilityAlerts",
     ":semanticCommits",
     ":dependencyDashboard",
-    ":dependencyDashboardApproval"
+    ":dependencyDashboardApproval",
+    "group:recommended",
+    "group:monorepos"
   ],
   "configWarningReuseIssue": false
 }

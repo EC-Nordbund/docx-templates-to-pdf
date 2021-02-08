@@ -257,10 +257,10 @@ glob@^7.1.6:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
-gotenberg-js-client@0.6.3:
-  version "0.6.3"
-  resolved "https://registry.yarnpkg.com/gotenberg-js-client/-/gotenberg-js-client-0.6.3.tgz#ba6fa7229dd366d8f5bb2b4fb0c7fc4fbcdb64d9"
-  integrity sha512-bLwnN4jBz7k6tYe/yOOaugMDnztxHgWZsbQ+1BKLbpPXV+uWioErDru22vtPAh+u2VziYlqtEgREYmuXMjWC2A==
+gotenberg-js-client@0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/gotenberg-js-client/-/gotenberg-js-client-0.7.0.tgz#32a52004247a0fbb279a5f2db35bf55c10dc7564"
+  integrity sha512-E8Lc8ONfaW50/RgUUkMHd8+g+F9Do9ungCS3YTWVHMU4cs9hMlWI1GufJSfUVxDFF12urk2oD1LICjMfu+HIlw==
   dependencies:
     form-data "^3.0.0"
 

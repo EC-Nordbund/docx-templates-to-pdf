@@ -19,7 +19,7 @@
     "@types/node": "14.14.25",
     "docx-templates": "4.5.3",
     "esbuild": "0.8.42",
-    "gotenberg-js-client": "0.6.3",
+    "gotenberg-js-client": "0.7.0",
     "rollup": "2.38.5",
     "rollup-plugin-dts": "2.0.1",
     "rollup-plugin-esbuild": "2.6.1",

@@ -2,7 +2,7 @@
 
 This is a helper Package on top of docx-templates and gotenberg-js-client to fill docx template Documents with data and convert it into PDF-Files.
 
-> Note this is a simple wrapper only 30 Lines of Code. So for your use case it might be easier to write some helpers on your own.
+> Note this is a simple wrapper only 70 Lines of Code. So for your use case it might be easier to write some helpers on your own.
 
 ## API
 

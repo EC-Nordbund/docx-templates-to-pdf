@@ -18,7 +18,7 @@
     "@rollup/plugin-node-resolve": "11.2.0",
     "@types/node": "14.14.31",
     "docx-templates": "4.5.3",
-    "esbuild": "0.8.50",
+    "esbuild": "0.12.2",
     "gotenberg-js-client": "0.7.0",
     "rollup": "2.39.0",
     "rollup-plugin-dts": "2.0.1",

@@ -213,10 +213,10 @@ delayed-stream@~1.0.0:
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
   integrity sha1-3zrhmayt+31ECqrgsp4icrJOxhk=
 
-docx-templates@4.5.4:
-  version "4.5.4"
-  resolved "https://registry.yarnpkg.com/docx-templates/-/docx-templates-4.5.4.tgz#3418a1dc6f3a4280b3ee6246e9a800d9767981a1"
-  integrity sha512-rT8IGsj6gywWMaRslaGZworIKJPl53Sm8I2xd+pfvaX4G1C4aRF0hQhl+Tc7L7oOEMG53+QfqdIujF0qYwFPSQ==
+docx-templates@4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/docx-templates/-/docx-templates-4.6.0.tgz#cd1a0ad93a4659aad80a08c02c076f5dcde5c2fc"
+  integrity sha512-2C5iL8G3Ouj8wSv1ISvxNDyfeMSJabIT7glNvj2eREawnLTaqyLhkpUSWzwJlM5MtZo3kirQhJFt512eIr3wiw==
   dependencies:
     jszip "^3.5.0"
     sax "1.2.4"

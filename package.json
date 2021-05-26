@@ -27,6 +27,6 @@
     "typescript": "4.1.5"
   },
   "dependencies": {
-    "mime-db": "1.46.0"
+    "mime-db": "1.47.0"
   }
 }

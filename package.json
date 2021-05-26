@@ -21,7 +21,7 @@
     "esbuild": "0.12.2",
     "gotenberg-js-client": "0.7.0",
     "rollup": "2.39.1",
-    "rollup-plugin-dts": "2.0.1",
+    "rollup-plugin-dts": "3.0.2",
     "rollup-plugin-esbuild": "4.2.3",
     "rollup-plugin-terser": "7.0.2",
     "typescript": "4.1.5"
